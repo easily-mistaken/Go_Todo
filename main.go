@@ -39,3 +39,22 @@ func addTask(tasks[]string, newTask string) []string {
 	tasks = append(tasks, newTask)
 	return tasks
 }
+
+func removeTask(tasks[]string, taskIndex int) []string {
+	tasks = append(tasks[:taskIndex], tasks[taskIndex+1:]...)
+	return tasks
+}
+
+func updateTask(tasks[]string, taskIndex int, newTask string) []string {
+	tasks[taskIndex] = newTask
+	return tasks
+}
+
+func completeTask(tasks[]string, taskIndex int) []string {
+	tasks = removeTask(tasks, taskIndex)
+	return tasks
+}
+
+func showTask(tasks[]string, taskIndex int) string {
+	return tasks[taskIndex]
+}
